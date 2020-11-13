@@ -175,30 +175,27 @@ console.log(usePromptElementForUser(userArray));
  Rendezzük úgy a tömböt, hogy minden szám után egy string következzen! Írasd ki a rendezett tömböt!*/
  const mixedArray = [3, 5, 7, 10, 'tíz', 8, 'ötven', 'hatvan', 'kettő','száz'];
 
- function filterNumbers(arr) {
-     let numbers= [];
+ function getPrimitivesElementByType(arr, type) {
+     let typedArray= [];
     for (let i = 0; i < arr.length; i += 1) 
-    if (typeof arr[i] === 'nummber') {
-        numbers.push(arr[i]);
+    if (typeof arr[i] === type) {
+        typedArray.push(arr[i]);
     }
-    return numbers;
+    return typedArray;
  }
 
- function filterStrings (arr) {
-     let strings = [];
-    for (let i = 0; i < arr.length; i += 1) 
-    if (typeof arr[i] === 'string') {
-        strings.push(arr[i]);
-    }
-    return strings;
- }
+ const numbers = getPrimitivesElementByType(mixedArray, 'number');
+ const strings = getPrimitivesElementByType(mixedArray, 'string');
 
-function mixArray(arr) {
-   for (let i = 0; i< arr.lenght; i++){
-       sortedArray.push()
+function mixArrays(arr1, arr2) {
+    const mixedArray = [];
+   for (let i = 0; i < arr1.length; i++){
+       mixedArray.push(arr1[i], arr2[i]);
    }
-        
+    return mixedArray;
 }
+
+console.log(mixArrays(numbers, strings));
 
 
 //15. Egy egészszámoakt tartalmazó tömb elemeit rendezzük két külön tömbbe páros és páratlan számok szerint.
